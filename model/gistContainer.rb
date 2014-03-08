@@ -3,7 +3,7 @@
 class GistContainer
   attr_reader :container
   
-  def intialize()
+  def initialize()
     @container = []
   end
   
