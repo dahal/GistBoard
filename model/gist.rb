@@ -1,4 +1,4 @@
-# v1
+# v0.1
 
 
 class Gist
@@ -10,7 +10,7 @@ class Gist
     @file                     = file
     @url                      = url
     @num_of_comments          = num_of_comments
-    @most_recent_comment_date = most_recent_comment_date 
+    @most_recent_comment_date = most_recent_comment_date
   end
   
 end
