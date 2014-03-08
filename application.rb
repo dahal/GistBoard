@@ -2,9 +2,12 @@ require 'sinatra'
 require 'rest-client'
 require 'json'
 require 'uri'
+require 'octokit'
 
 CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
 CLIENT_SECRET = ENV['GISTBOARD_SECRET_ID']
+
+use Rack::Session::Cookie, secret: rand.to_s()
 
 get '/' do
 	gist1 = { user: "jhulley" ,
@@ -30,15 +33,23 @@ get '/' do
   erb :index, locals: { gist_container: gist_container }
 end
 
+get '/new_user' do
+	erb :new_user
+end
+
 get '/auth' do 
 	query_params = {
 		client_id: CLIENT_ID,
-		scope: "gist", 
-		#redirect_uri: "http://localhost/4567"
+		scope: "gist,user",
 	}
 	query_string = URI.encode_www_form(query_params)
 	redirect "https://github.com/login/oauth/authorize?#{query_string}"
 end
+
+get '/test' do
+	erb :test, :locals => { :access_token => session[:access_token]}
+end
+
 
 get '/callback' do
 	code = params['code']
@@ -47,7 +58,13 @@ get '/callback' do
                            :client_secret => CLIENT_SECRET,
                            :code => code},
                            :accept => :json)
-	token = JSON.parse(response.body)['access_token']
+	access_token = JSON.parse(response.body)['access_token']
+	session[:access_token] = access_token
+	client = Octokit::Client.new access_token: access_token
+	user = client.user
+	login = user.login
+	gists = user.gists
+	erb :test, locals: { access_token: access_token, username: login }
 end
 
 
