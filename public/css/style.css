@@ -56,6 +56,7 @@ table {
 	padding: 10px;
 	color: #000000;
 	text-decoration: none;
+	text-align: center;
 }
 
 .username-link:hover {
@@ -154,3 +155,52 @@ td {
 	clear: both ;
 	text-align: center;
 }
+
+@media screen and (max-width: 1024px){
+	.container {
+		width: 90%;
+	}
+
+	.grid_3 {
+		width: 100%;
+		margin-bottom: 25px;
+	}
+
+	.grid_1 {
+		width: 100%;
+		margin-bottom: 25px;
+	}
+
+	.grav-img img {
+		max-width: 100px;
+		float: left;
+	}
+
+	.info-panel {
+		border-bottom: 1px solid #d5d5d5;
+		padding-bottom: 25px;
+	}
+
+	.info-sub-panel {
+		float: left;
+		padding-left: 10%;
+	}
+
+	.username-link {
+		float: left;
+	}
+
+	.user-info {
+		float: left;
+		display: inline;
+		border-top: none;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.username-link {
+		font-size: .750em;
+	}
+}
+
+
