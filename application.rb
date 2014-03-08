@@ -3,6 +3,9 @@ require 'rest-client'
 require 'json'
 require 'uri'
 
+CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
+CLIENT_SECRET = ENV['GISTBOARD_SECRET_ID']
+
 get '/' do
 	gist1 = { user: "jhulley" ,
 	 file: "myrubyfile.rb" ,
@@ -29,7 +32,7 @@ end
 
 get '/auth' do 
 	query_params = {
-		client_id: ENV['GISTBOARD_CLIENT_ID'],
+		client_id: CLIENT_ID,
 		scope: "gist", 
 		#redirect_uri: "http://localhost/4567"
 	}
@@ -39,20 +42,12 @@ end
 
 get '/callback' do
 	code = params['code']
-	query = {
-		body: {
-			client_id: ENV['GISTBOARD_CLIENT_ID'], 
-			client_secret: ENV['GISTBOARD_SECRET_ID'],
-			code: code
-		},
-		headers: {
-			"Accept" => "aco
-			pplciation/json"
-		}
-	}
-
-	response = RestClient.post("https://github.com/login/oauth/access_token", query)
+	response = RestClient.post('https://github.com/login/oauth/access_token', 
+													{:client_id => CLIENT_ID,
+                           :client_secret => CLIENT_SECRET,
+                           :code => code},
+                           :accept => :json)
 	token = JSON.parse(response.body)['access_token']
-	erb :authenticated, locals: { token: token }
 end
+
 
