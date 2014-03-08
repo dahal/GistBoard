@@ -12,9 +12,6 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 6. As a user, I want to be able to sort all my gists by certain table headings (i.e. title, date last modified, comments, stars, forks, files)
 
 
-##Stack
-
-
 ##Next Steps
 * Model
 	* Create ruby classes for Gist
