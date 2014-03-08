@@ -40,17 +40,12 @@
           </div>
           <table>
 
-            <tr>
-              <td>Fake_file.html</td>
-              <td class="table-center-data">4</td>
-              <td class="table-center-data">12:34:54</td>
-            </tr>
-
             <% gist_container.each do |gist|  %>
               <tr>
-                <td><a href="<%= gist[:url] %>"><%= gist[:file] %></a></td>
-                <td class="table-center-data"><%= gist[:url] %></td>
-                <td class="table-center-data"><%= gist[:num_comments] %></td>
+                <td class="file"><a href="<%= gist[:url] %>"><%= gist[:file] %></a></td>
+                <td class="comment-count">Comments: <%= gist[:num_comments] %></td>
+                <td class="table-punc">/</td>
+                <td class="latest-comment">Latest: February 19, 2009 00:00</td>
               </tr>
             <% end %>
 

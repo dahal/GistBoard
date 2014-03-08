@@ -42,16 +42,8 @@ body {
 }
 
 table {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.table-heading {
-	text-align: center;
-}
-
-.table-center-data {
-	text-align: center;
+	width: 97%;
+	margin: 0 1.5% 0 1.5%;
 }
 
 .user-grav {
@@ -67,7 +59,7 @@ table {
 }
 
 .username-link:hover {
-	color: blue;
+	color: #4183c4;
 }
 
 .info-panel {
@@ -84,11 +76,15 @@ table {
 	float: left;
 }
 
+/* Table formatting */
+
 .table-header {
 	height: 36px;
 	background: #EAEAEA;
 	background-image: linear-gradient(#fafafa, #eaeaea);
 	border-bottom: 1px solid #d5d5d5;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
 }
 
 .table-header h2 {
@@ -102,23 +98,44 @@ table {
 	border-radius: 4px;
 }
 
+.file {
+	width: 40%;
+}
+
+.file a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.file a:hover {
+	color: #4183c4;
+}
+
+.comment-count {
+	width: 12%;
+}
+
+.latest-comment {
+	width: 28%;
+}
+
+.table-punc {
+	width: 2%;
+	margin: 0 1% 0 1%;
+	font-weight: bold;
+}
+
+tr {
+	border-bottom: 1px solid #d5d5d5;
+}
+
+td {
+	padding: 5px 0 5px 0;
+}
+
 .keep-for-test {
 	border-top: 1px solid #d5d5d5;
 	clear: both ;
 	text-align: center;
 }
-
-td {
-	border: 1px;
-}
-
-/*
-
-            <% gist_container.each do |gist|  %>
-              <tr>
-                <td><%= gist(file) %></td>
-                <td class="table-center-data"><%= gist(file) %></td>
-                <td class="table-center-data"><%= gist(file) %></td>
-              </tr>
-            <% end %>
-*/
