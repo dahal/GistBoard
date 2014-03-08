@@ -14,12 +14,13 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 
 ##Next Steps
 * Model
-	* Create ruby classes for Gist
-	* Create ruby classes for GistContainer
-	* Create ruby methods
+	* Add comment count and gist count methods to GistContainer
 * View
-	* Create basic index.erb for the layout
-	* Create non-auth splash screen for redirect
+	* Update variables with "real" names when routes are done
+	* Fix bottom border on last row of table
+	* Update formatting for long file names
+	* Add media queries and other responsive features
+	* Style non-auth splash screen for redirect
 * Controller
 	* Create session and is_auth helpers
 	* Create redirect for non_auth
@@ -31,4 +32,4 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 ##Authors
 * James Hulley | [jhulley](https://github.com/jhulley)
 * Phil Wittig | [pdwittig](https://github.com/pdwittig)
-* Alex Zeigler | [Ayy_Zee](https://github.com/Ayyzee)
+* Alex Zeigler | [AyyZee](https://github.com/Ayyzee)
