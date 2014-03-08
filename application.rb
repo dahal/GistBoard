@@ -4,7 +4,6 @@ require 'json'
 
 # GIST_BOARD_CLIENT_ID = ENV['61d8e9d421cca2314136']
 CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
-CLIENT_SECRET = ENV['25f1766915973cca3a16558d7b3705e5919a3f8b']
 
 get '/' do
 	gist1 = { user: "jhulley" ,
