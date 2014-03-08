@@ -15,6 +15,21 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 ##Stack
 
 
+##Next Steps
+* Model
+	* Create ruby classes for Gist
+	* Create ruby classes for GistContainer
+	* Create ruby methods
+* View
+	* Create basic index.erb for the layout
+	* Create non-auth splash screen for redirect
+* Controller
+	* Create session and is_auth helpers
+	* Create redirect for non_auth
+	* Update auth route
+	* Add callback route
+	* Add ruby client API calls and interact with ruby models
+
 
 ##Authors
 * James Hulley | [jhulley](https://github.com/jhulley)
