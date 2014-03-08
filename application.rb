@@ -1,9 +1,7 @@
 require 'sinatra'
 require 'rest-client'
 require 'json'
-
-# GIST_BOARD_CLIENT_ID = ENV['61d8e9d421cca2314136']
-CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
+require 'uri'
 
 get '/' do
 	gist1 = { user: "jhulley" ,
@@ -29,6 +27,32 @@ get '/' do
   erb :index, locals: { gist_container: gist_container }
 end
 
-get '/auth' do
-	redirect "https://github.com/login/oauth/authorize?scope=gist,user:email&client_id=#{CLIENT_ID}&redirect_uri=http://localhost:4567/callback"
+get '/auth' do 
+	query_params = {
+		client_id: ENV['GISTBOARD_CLIENT_ID'],
+		scope: "gist", 
+		#redirect_uri: "http://localhost/4567"
+	}
+	query_string = URI.encode_www_form(query_params)
+	redirect "https://github.com/login/oauth/authorize?#{query_string}"
 end
+
+get '/callback' do
+	code = params['code']
+	query = {
+		body: {
+			client_id: ENV['GISTBOARD_CLIENT_ID'], 
+			client_secret: ENV['GISTBOARD_SECRET_ID'],
+			code: code
+		},
+		headers: {
+			"Accept" => "aco
+			pplciation/json"
+		}
+	}
+
+	response = RestClient.post("https://github.com/login/oauth/access_token", query)
+	token = JSON.parse(response.body)['access_token']
+	erb :authenticated, locals: { token: token }
+end
+
