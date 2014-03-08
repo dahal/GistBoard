@@ -1,0 +1,21 @@
+body {
+	color: #000000;
+	background-color: #FFFFFF;
+	font-family: Helvetica, arial, sans-serif;
+}
+
+.navbar {
+	position: fixed-top;
+  background-color: #F3F3F3;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+	height: 40px;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+.navbar h1 {
+	padding-top: 5px;
+	font-size: 30px;
+	margin: 0;
+}
