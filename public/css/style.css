@@ -4,6 +4,27 @@ body {
 	font-family: Helvetica, arial, sans-serif;
 }
 
+.container {
+	max-width: 980px;
+	margin: 20px auto 20px auto;
+}
+
+.grid_1 {
+	width: 25%;
+}
+
+.grid_2 {
+	width: 50%;
+}
+
+.grid_3 {
+	width: 75%;
+}
+
+.grid_4 {
+	width: 100%
+}
+
 .navbar {
 	position: fixed-top;
   background-color: #F3F3F3;
@@ -19,3 +40,81 @@ body {
 	font-size: 30px;
 	margin: 0;
 }
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table-heading {
+	text-align: center;
+}
+
+.table-center-data {
+	text-align: center;
+}
+
+.user-grav {
+	max-width: 230px;
+	max-height: 230px;
+	border-radius: 6px;
+}
+
+.username-link {
+	padding: 10px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.username-link:hover {
+	color: blue;
+}
+
+.info-panel {
+	float: left;
+}
+
+.user-info {
+	border-top: 1px solid #d5d5d5;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.content {
+	float: left;
+}
+
+.table-header {
+	height: 36px;
+	background: #EAEAEA;
+	background-image: linear-gradient(#fafafa, #eaeaea);
+	border-bottom: 1px solid #d5d5d5;
+}
+
+.table-header h2 {
+	font-size: 20px;
+	padding: 7px 10px 6px 10px;
+}
+
+.gist-table {
+	width: 100%;
+	border: 1px solid #d5d5d5;
+	border-radius: 4px;
+}
+
+.keep-for-test {
+	border-top: 1px solid #d5d5d5;
+	clear: both ;
+	text-align: center;
+}
+
+/*
+
+            <% gist_container.each do |gist|  %>
+              <tr>
+                <td><%= gist(file) %></td>
+                <td class="table-center-data"><%= gist(file) %></td>
+                <td class="table-center-data"><%= gist(file) %></td>
+              </tr>
+            <% end %>
+*/

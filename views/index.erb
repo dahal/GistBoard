@@ -11,23 +11,58 @@
 
 <body>
 
-  <div class="container clearfix">
+  <div class="clearfix">
     <div class="navbar">
       <div class="navbar-inner">
         <h1>GistBoard</h1>
       </div>
     </div>
 
-    <div class="keep-for-test">
-      <p>
-        We're going to now talk to the GitHub API. Ready?
-        <a href="/auth">Click here</a> to begin!</a>
-      </p>
-      <p>
-        If that link doesn't work, remember to provide your own <a href="/v3/oauth/#web-application-flow">Client ID</a>!
-      </p>
-    </div>
+    <div class="container">
 
+      <div class="info-panel grid_1">
+        <div>
+          <img class="user-grav" src="https://1.gravatar.com/avatar/9814cc0037669a4bce0bfd7721841cb1?d=https%3A%2F%2Fidenticons.github.com%2F13168fb671a954cd64f1a8fa1f4f7d65.png&r=x&s=460">
+        </div>
+        <a class="username-link" href="https://gist.github.com/jhulley"><h2>jhulley</h2></a> <!-- put username and url here -->
+        <div class="user-info">
+          <h3>Gists total: </h3>
+          <h3>Latest comment: </h3>
+        </div>
+      </div>
+
+      <div class="content grid_3">
+        <div class="gist-table">
+          <div class="table-header">
+            <h2>Gists</h2>
+          </div>
+          <table>
+            <tr class="table-heading">
+              <td>File Name</td>
+            </tr>
+
+            <tr>
+              <td>Fake_file.html</td>
+              <td class="table-center-data">4</td>
+              <td class="table-center-data">12:34:54</td>
+            </tr>
+
+
+          </table>
+        </div>
+      </div>
+
+
+      <div class="keep-for-test">
+        <p>
+          We're going to now talk to the GitHub API. Ready?
+          <a href="/auth">Click here</a> to begin!</a>
+        </p>
+        <p>
+          If that link doesn't work, remember to provide your own <a href="/v3/oauth/#web-application-flow">Client ID</a>!
+        </p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
