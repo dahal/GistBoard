@@ -45,7 +45,9 @@ get '/' do
 	gist_container = GistContainer.new
 
 	client = Octokit::Client.new access_token: session[:access_token]
-	gists = client.gists 
+	gists = client.gists
+	email = client.emails.first 
+	username = client.user.login
 	gist_container = GistContainer.new()
 
 	gists.each do |gist|
@@ -73,7 +75,7 @@ end
 get '/auth' do 
 	query_params = {
 		client_id: CLIENT_ID,
-		scope: "gist",
+		scope: "gist,user:email"
 	}
 	query_string = URI.encode_www_form(query_params)
 	redirect "https://github.com/login/oauth/authorize?#{query_string}"
