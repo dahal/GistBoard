@@ -159,6 +159,10 @@ td {
 	padding: 5px 0 10px 0;
 }
 
+.last {
+	border-bottom: none;
+}
+
 .com-count {
 	font-weight: bold;
 }
@@ -256,7 +260,7 @@ td {
 	}
 
 	.stat p {
-		font-size: .5em;
+		font-size: .750em;
 		display: inline;
 	}
 }

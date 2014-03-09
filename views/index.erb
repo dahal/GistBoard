@@ -50,13 +50,22 @@
           </div>
           <table>
 
-            <% gist_container.container.each do |gist|  %>
+            <% gist_container.container.each_with_index do |gist, index|  %>
+            <% if index == (gist_container.container.length - 1) %>
             <tr>
               <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
             </tr>
             <tr>
-              <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / <%= gist.most_recent_comment_date %></td>
+              <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link">Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %></td>
             </tr>
+            <% else %>
+            <tr>
+              <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
+            </tr>
+            <tr>
+              <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %></td>
+            </tr>
+            <% end %>
             <% end %>
 
           </table>
