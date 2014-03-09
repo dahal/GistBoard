@@ -30,4 +30,4 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 ##Authors
 * James Hulley | [jhulley](https://github.com/jhulley)
 * Phil Wittig | [pdwittig](https://github.com/pdwittig)
-* Alex Zeigler | [AyyZee](https://github.com/Ayyzee)
+* Alex Ziegler | [AyyZee](https://github.com/Ayyzee)

@@ -77,9 +77,12 @@ table {
 }
 
 .user-info {
-	border-top: 1px solid #d5d5d5;
 	margin-right: 10px;
 	margin-bottom: 10px;
+}
+
+.info-sub-panel {
+	border-bottom: 1px solid #d5d5d5;
 }
 
 .stat {
@@ -99,6 +102,7 @@ table {
 
 .content {
 	float: left;
+	margin-bottom: 20px;
 }
 
 /* Table formatting */
@@ -112,6 +116,18 @@ table {
 	border-top-left-radius: 4px;
 }
 
+tr {
+	max-width: 100%;
+}
+
+/*
+td {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+*/
+
 .table-header h2 {
 	font-size: 20px;
 	padding: 7px 10px 6px 10px;
@@ -124,8 +140,13 @@ table {
 }
 
 .file {
-	width: 40%;
 	padding: 10px 0 0 0;
+}
+
+.wrap {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .file {
@@ -158,6 +179,8 @@ table {
 	text-decoration: underline;
 }
 
+
+
 @media screen and (max-width: 1024px){
 	.container {
 		width: 90%;
@@ -179,6 +202,8 @@ table {
 
 	.info-sub-panel {
 		float: left;
+		border-bottom: none;
+		padding-left: 10px;
 	}
 
 	.grav-img img {
@@ -191,49 +216,57 @@ table {
 	}
 
 	.info-sub-panel {
+		display: block;
 		float: left;
-		padding-left: 10%;
+		padding-left: 10px;
 	}
 
 	.username-link {
 		float: left;
-	}
-
-	.user-info {
-		clear: both;
-		float: left;
-		display: inline;
-		border-top: none;
-	}
-
-	.stat {
-		width: 25%;
-		text-align: center;
-		display: inline;
-		margin: 20px 10px 20px 10px;
-	}
-}
-
-@media screen and (max-width: 760px){
-	.username-link {
-		margin-top: 30px;
+		margin-top: 10px;
+		padding: 0;
+		text-align: left;
 	}
 
 	.username-link h2 {
 		font-size: 1.000em;
 	}
-	
-}
 
-@media screen and (max-width: 480px){
+	.user-info {
+		float: left;
+		display: inline;
+		border-top: none;
+		width: 66%;
+		margin-right: 0;
+	}
+
+	.all-stats {
+		display: block;
+	}
+
+	.stat {
+		text-align: left;
+		margin: 5px 10px 5px 10px;
+		clear: both;
+	}
 
 	.stat h3 {
 		font-size: 1.5em;
+		display: inline;
 	}
 
 	.stat p {
 		font-size: .5em;
+		display: inline;
 	}
+}
+
+@media screen and (max-width: 760px){
+
+}
+
+@media screen and (max-width: 480px){
+
 }
 
 
