@@ -18,11 +18,11 @@ class GistContainer
     @container << gist 
   end
   
-  def count_gist
+  def gist_count
     @container.length
   end
   
-  def comment_sum
+  def comment_count
     # This should be considered for revision, perhaps to reduce. 
     total = 0
     @container.each { |gist| total += gist.num_of_comments }

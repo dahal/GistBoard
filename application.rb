@@ -58,9 +58,7 @@ get '/' do
     num_of_comments = gist.comments      
     most_recent_comment_date = gist_comments.map! { |gist_comment| gist_comment.updated_at}.sort.pop 
     url = "https://gist.github.com/#{user.username}/#{gist_id}"
-
     gist_container.add_gist(Gist.new( file, url, gist_id, num_of_comments, most_recent_comment_date ) )
-
 	end
 	
   erb :index, locals: { gist_container: gist_container }

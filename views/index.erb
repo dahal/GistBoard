@@ -25,7 +25,7 @@
 					
           <a href="<%=gist_container.user.get_url%>" >
 						
-            <img class="user-grav" src="<% gist_container.user.get_gravatar_url %>">
+            <img class="user-grav" src="<%=gist_container.user.get_gravatar_url %>">
           </a>
 					
         </div>
@@ -35,12 +35,12 @@
           </div>
           <div class="all-stats">
             <div class="stat">
-              <h3>12</h3>
-              <p>Total gists</p>
+              <h3><%=gist_container.gist_count %></h3>
+              <p>Total Gists</p>
             </div>
             <div class="stat">
-              <h3>34</h3>
-              <p>Total comments</p>
+              <h3><%=gist_container.comment_count %></h3>
+              <p>Total Comments</p>
             </div>
           </div>
         </div>
