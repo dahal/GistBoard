@@ -1,10 +1,11 @@
 # v0.1 
 
 class GistContainer
-  attr_reader :container
+  attr_reader :container, :user
   
-  def initialize( )
-    @container=[]
+  def initialize( user )
+    @container = []
+    @user      = user
   end
 
   def sort_container( key="most_recent_comment_date" )

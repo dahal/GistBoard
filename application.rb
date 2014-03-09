@@ -5,6 +5,7 @@ require 'uri'
 require 'octokit'
 require_relative 'model/gist'
 require_relative 'model/gistContainer'
+require_relative 'model/user'
 
 CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
 CLIENT_SECRET = ENV['GISTBOARD_SECRET_ID']
@@ -42,26 +43,23 @@ get '/' do
 		redirect "/new_user"
 	end
 
-	gist_container = GistContainer.new
-
 	client = Octokit::Client.new access_token: session[:access_token]
 	gists = client.gists
 	email = client.emails.first 
 	username = client.user.login
-	gist_container = GistContainer.new()
+  user = User.new( username, email )
+	gist_container = GistContainer.new( user )
 
 	gists.each do |gist|
 
 		gist_comments = client.gist_comments(gists.first.id)
 		gist_id = gist.id
-		username = gist.user.login                 
-    gravatar_id = gist.user.gravatar_id
     file = gist.files.to_hash.keys.first.to_s                   
     num_of_comments = gist.comments      
     most_recent_comment_date = gist_comments.map! { |gist_comment| gist_comment.updated_at}.sort.pop 
-    url = "https://gist.github.com/#{username}/#{gist_id}"
+    url = "https://gist.github.com/#{user.username}/#{gist_id}"
 
-    gist_container.add_gist(Gist.new(username, gravatar_id, file, url, num_of_comments, most_recent_comment_date))
+    gist_container.add_gist(Gist.new( file, url, gist_id, num_of_comments, most_recent_comment_date ) )
 
 	end
 	
