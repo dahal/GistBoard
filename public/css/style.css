@@ -4,6 +4,15 @@ body {
 	font-family: Helvetica, arial, sans-serif;
 }
 
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4183c4;
+}
+
 .container {
 	max-width: 980px;
 	margin: 20px auto 20px auto;
@@ -116,44 +125,37 @@ table {
 
 .file {
 	width: 40%;
+	padding: 10px 0 0 0;
 }
 
-.file a {
-	color: #000000;
-	text-decoration: none;
+.file {
 	font-weight: bold;
 }
 
-.file a:hover {
-	color: #4183c4;
+.comments {
+	border-bottom: 1px solid #d5d5d5;
+	font-size: .750em;
+	padding: 5px 0 10px 0;
 }
 
-.comment-count {
-	width: 12%;
-}
-
-.latest-comment {
-	width: 28%;
+.com-count {
+	font-weight: bold;
 }
 
 .table-punc {
-	width: 2%;
 	margin: 0 1% 0 1%;
 	font-weight: bold;
-}
-
-tr {
-	border-bottom: 1px solid #d5d5d5;
-}
-
-td {
-	padding: 5px 0 5px 0;
 }
 
 .keep-for-test {
 	border-top: 1px solid #d5d5d5;
 	clear: both ;
 	text-align: center;
+}
+
+.keep-for-test a {
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 1024px){
@@ -171,9 +173,16 @@ td {
 		margin-bottom: 25px;
 	}
 
+	.grav-img {
+		float: left;
+	}
+
+	.info-sub-panel {
+		float: left;
+	}
+
 	.grav-img img {
 		max-width: 100px;
-		float: left;
 	}
 
 	.info-panel {
@@ -191,15 +200,39 @@ td {
 	}
 
 	.user-info {
+		clear: both;
 		float: left;
 		display: inline;
 		border-top: none;
 	}
+
+	.stat {
+		width: 25%;
+		text-align: center;
+		display: inline;
+		margin: 20px 10px 20px 10px;
+	}
+}
+
+@media screen and (max-width: 760px){
+	.username-link {
+		margin-top: 30px;
+	}
+
+	.username-link h2 {
+		font-size: 1.000em;
+	}
+	
 }
 
 @media screen and (max-width: 480px){
-	.username-link {
-		font-size: .750em;
+
+	.stat h3 {
+		font-size: 1.5em;
+	}
+
+	.stat p {
+		font-size: .5em;
 	}
 }
 

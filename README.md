@@ -16,11 +16,9 @@ This web app provides an overview of a user’s GitHub gists and details. In a s
 * Model
 	* Add comment count and gist count methods to GistContainer
 * View
-	* Update variables with "real" names when routes are done
-	* Fix bottom border on last row of table
-	* Update formatting for long file names
-	* Add media queries and other responsive features
-	* Style non-auth splash screen for redirect
+	* Add instructions and intro to new_user page
+	* Continue responsive formatting
+	* Troubleshoot variables for: gravatar, user for the image, link to homepage, and username
 * Controller
 	* Create session and is_auth helpers
 	* Create redirect for non_auth
