@@ -185,6 +185,10 @@ tr {
 	margin: 50px 0 50px 0;
 }
 
+.short {
+	display: none;
+}
+
 /* Tablets and phones */
 @media screen and (max-width: 1024px){
 
@@ -267,9 +271,15 @@ tr {
 		font-size: .750em;
 		display: inline;
 	}
-
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 700px){
+	.long {
+		display: none;
+	}
+
+	.short {
+		display: initial;
+	}
 }
 
