@@ -67,16 +67,16 @@
 
             <% gist_container.container.each_with_index do |gist, index|  %>
             <tr>
-              <td class="file"><a href="<%= gist.url %>">
+              <td class="file"><a href="<%= gist.url %>" target="_blank">
                 <span class="long"><%= gist.filename %></span>
                 <span class="short"><%= gist.short_filename %></span>
               </a></td>
             </tr>
             <tr>
               <% if index == (gist_container.container.length - 1) %>
-              <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link">
+              <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link" target="_blank">
                 <% else %>
-                <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">
+                <td class="comments"><a href="<%= gist.url %>#comments" class="com-link" target="_blank">
                   <% end %>
                   <% if gist.num_of_comments == 0 %>
                   No comments
