@@ -14,7 +14,7 @@ class User
   
   def get_gravatar_url
     hash = Digest::MD5.hexdigest(@email)
-    return "http://www.gravatar.com/avatar/#{hash}"
+    return "http://www.gravatar.com/avatar/#{hash}?s=460"
   end
   
 end
