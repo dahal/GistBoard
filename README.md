@@ -25,8 +25,8 @@ Hey, Awesome Person. Let's say you have some really nifty ideas, thoughts, etcet
 
  
 ##Authors
-James Hulley | [jhulley](https://github.com/jhulley)
-Phil Wittig | [pdwittig](https://github.com/pdwittig)
-Alex Ziegler | [AyyZee](https://github.com/Ayyzee)
+* James Hulley | [jhulley](https://github.com/jhulley)
+* Phil Wittig | [pdwittig](https://github.com/pdwittig)
+* Alex Ziegler | [AyyZee](https://github.com/Ayyzee)
 
 
