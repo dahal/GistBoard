@@ -13,6 +13,6 @@ class Gist
   end
   
   def short_filename
-  	return filename.slice(0...30) << '...'
+  	return @filename.slice(0...30) << '...'
   end
 end
