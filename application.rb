@@ -56,7 +56,7 @@ end
 get '/auth' do 
 	query_params = {
 		client_id: CLIENT_ID,
-		scope: "gist,user:email"
+		scope: "user:email"
 	}
 	query_string = URI.encode_www_form(query_params)
 	redirect "https://github.com/login/oauth/authorize?#{query_string}"
