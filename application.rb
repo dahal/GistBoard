@@ -24,7 +24,14 @@ get '/' do
 		redirect "/new_user"
 	end
 
-	client = Octokit::Client.new access_token: session[:access_token]
+	begin
+    client = Octokit::Client.new access_token: session[:access_token]
+    user = client.user
+  rescue => e
+    redirect '/auth'
+  end
+
+	# client = Octokit::Client.new access_token: session[:access_token]
 	gists = client.gists
 	email = client.emails.first 
 	username = client.user.login
@@ -62,9 +69,9 @@ get '/auth' do
 	redirect "https://github.com/login/oauth/authorize?#{query_string}"
 end
 
-# get '/test' do
-# 	erb :test, :locals => { :access_token => session[:access_token]}
-# end
+get '/test' do
+	erb :test, :locals => { :access_token => session[:access_token]}
+end
 
 
 get '/callback' do
