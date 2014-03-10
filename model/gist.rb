@@ -1,5 +1,7 @@
 # v0.1
 require 'date'
+require 'action_view'
+include ActionView::Helpers::DateHelper
 
 
 class Gist
@@ -10,7 +12,7 @@ class Gist
     @url                         = url
     @id                          = id
     @num_of_comments             = num_of_comments
-    @most_recent_comment_date   = most_recent_comment_date
+    @most_recent_comment_date    = most_recent_comment_date
   end
   
   def short_filename
@@ -21,9 +23,7 @@ class Gist
     end
   end
 
-  # def insert_fake_dates
-  #   if !most_recent_comment_date
-  #     @most_recetn_comment_date = Date.new(1986,10,23)
-  #   end
-  # end
+  def time_ago
+    return  time_ago_in_words(most_recent_comment_date) 
+  end
 end
