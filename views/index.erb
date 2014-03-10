@@ -22,12 +22,12 @@
 
       <div class="info-panel grid_1">
         <div class="grav-img">
-					
+
           <a href="<%=gist_container.user.get_url%>" >
-						
+
             <img class="user-grav" src="<%=gist_container.user.get_gravatar_url %>">
           </a>
-					
+
         </div>
         <div class="user-info">
           <div class="info-sub-panel">
@@ -59,14 +59,26 @@
               <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
             </tr>
             <tr>
-              <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link">Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %></td>
+              <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link">
+                <% if gist.num_of_comments == 0 %>
+                No comments
+                <% else %>
+                Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %>
+                <% end %>
+              </td>
             </tr>
             <% else %>
             <tr>
               <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
             </tr>
             <tr>
-              <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %></td>
+              <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">
+                <% if gist.num_of_comments == 0 %>
+                No comments
+                <% else %>
+                Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %>
+                <% end %>
+              </td>
             </tr>
             <% end %>
             <% end %>
@@ -76,13 +88,18 @@
       </div>
 
 
-      <div class="keep-for-test">
+      <div class="footer">
+        <!--
         <p>
           We're going to now talk to the GitHub API. Ready?
           <a href="/auth">Click here</a> to begin!</a>
         </p>
         <p>
           If that link doesn't work, remember to provide your own <a href="/v3/oauth/#web-application-flow">Client ID</a>!
+        </p>
+        -->
+        <p class="copy">
+          Created by: <a href="https://github.com/pdwittig" target="_blank">Phil Wittig</a>, <a href="https://github.com/jhulley" target="_blank">James Hulley</a> and <a href="https://github.com/Ayyzee" target="_blank">Alex Ziegler.</a>
         </p>
       </div>
     </div>

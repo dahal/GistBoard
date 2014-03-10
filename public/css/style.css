@@ -36,7 +36,7 @@ a:hover {
 
 .navbar {
 	position: fixed-top;
-  background-color: #F3F3F3;
+	background-color: #F3F3F3;
 	text-align: center;
 	width: 100%;
 	z-index: 10;
@@ -78,13 +78,22 @@ table {
 	float: left;
 }
 
+.all-stats {
+	border-bottom: 1px solid #d5d5d5;
+	border-top: 1px solid #d5d5d5;
+	width: 100%;
+	overflow: auto;
+}
+
 .user-info {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
 .info-sub-panel {
-	border-bottom: 1px solid #d5d5d5;
+	/* border-bottom: 1px solid #d5d5d5; */
+	text-align: center;
+	margin: 20px 0 20px 0;
 }
 
 .stat {
@@ -122,14 +131,6 @@ tr {
 	max-width: 100%;
 }
 
-/*
-td {
-	overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-*/
-
 .table-header h2 {
 	font-size: 20px;
 	padding: 7px 10px 6px 10px;
@@ -143,12 +144,6 @@ td {
 
 .file {
 	padding: 10px 0 0 0;
-}
-
-.wrap {
-	overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .file {
@@ -174,20 +169,24 @@ td {
 	font-weight: bold;
 }
 
-.keep-for-test {
+.footer {
 	border-top: 1px solid #d5d5d5;
 	clear: both ;
 	text-align: center;
 }
 
-.keep-for-test a {
+.footer a {
 	font-weight: bold;
 	text-decoration: underline;
 }
 
+.copy {
+	font-size: .750em;
+}
 
-
+/* Tablets and phones */
 @media screen and (max-width: 1024px){
+
 	.container {
 		width: 90%;
 	}
@@ -225,17 +224,18 @@ td {
 		display: block;
 		float: left;
 		padding-left: 10px;
+		margin: 0 0 10px 0;
 	}
 
 	.username-link {
 		float: left;
-		/* margin-top: 10px; */
+		margin-top: 5px;
 		padding: 0;
 		text-align: left;
 	}
 
 	.username-link h2 {
-		font-size: 1.000em;
+		font-size: 1.250em;
 	}
 
 	.user-info {
@@ -248,6 +248,7 @@ td {
 
 	.all-stats {
 		display: block;
+		border: none;
 	}
 
 	.stat {
@@ -257,7 +258,7 @@ td {
 	}
 
 	.stat h3 {
-		font-size: 1.25em;
+		font-size: 1.250em;
 		display: inline;
 	}
 
@@ -267,12 +268,21 @@ td {
 	}
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 720px){
+
+	.wrap {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/*
+	td {
+		overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+	*/
 
 }
-
-@media screen and (max-width: 480px){
-
-}
-
 
