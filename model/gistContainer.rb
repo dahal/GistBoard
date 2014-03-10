@@ -8,10 +8,8 @@ class GistContainer
     @user      = user
   end
 
-  def sort_container( key="most_recent_comment_date" )
-    @container.map { |gist|
-      gist.send( key ) 
-    } 
+  def sort!( key="most_recent_comment_date" )
+    @container.sort_by! { |gist| gist.most_recent_comment_date }
   end
   
   def add_gist( gist )
