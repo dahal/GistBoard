@@ -81,7 +81,7 @@
                   <% if gist.num_of_comments == 0 %>
                   No comments
                   <% else %>
-                  Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date %>
+                  Comments: <span class="com-count"><%= gist.num_of_comments %></span></a> / Latest: <%= gist.most_recent_comment_date.strftime("%B %d, %Y") %>
                   <% end %>
                 </td>
               </tr>

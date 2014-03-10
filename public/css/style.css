@@ -182,11 +182,21 @@ tr {
 
 .begin {
 	text-align: center;
-	margin: 50px 0 50px 0;
+	margin: 30px 0 30px 0;
 }
 
 .short {
 	display: none;
+}
+
+.intro-img {
+	text-align: center;
+}
+
+.intro-img img {
+	max-width: 75%;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 /* Tablets and phones */
