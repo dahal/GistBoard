@@ -62,9 +62,9 @@ get '/auth' do
 	redirect "https://github.com/login/oauth/authorize?#{query_string}"
 end
 
-get '/test' do
-	erb :test, :locals => { :access_token => session[:access_token]}
-end
+# get '/test' do
+# 	erb :test, :locals => { :access_token => session[:access_token]}
+# end
 
 
 get '/callback' do
