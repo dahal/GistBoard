@@ -26,7 +26,7 @@ get '/' do
 
 	begin
     client = Octokit::Client.new access_token: session[:access_token]
-    client.per_page = 20
+    client.per_page = 200
     user = client.user
   rescue => e
     redirect '/auth'
