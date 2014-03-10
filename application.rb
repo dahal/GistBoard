@@ -11,7 +11,6 @@ CLIENT_ID = ENV['GISTBOARD_CLIENT_ID']
 CLIENT_SECRET = ENV['GISTBOARD_SECRET_ID']
 
 use Rack::Session::Cookie, secret: rand.to_s()
-test = "phil"
 
 helpers do
 	def authenticated?
