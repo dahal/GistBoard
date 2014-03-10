@@ -12,7 +12,7 @@ Phil: Like the ones you want to *check* but really aren't liking the idea of com
 Alex: Check? Cash? 
 James: Ah, I like it. 
 Alex: Check? Cash? Credit?
-James: Stop it, Alex. You know'd use it.
+James: Stop it, Alex. You know you'd use it.
 ```
 
 
