@@ -53,7 +53,7 @@ get '/' do
 	gists.each do |gist|
 		gist_id = gist.id
 		gist_comments = client.gist_comments(gist_id)
-    file = gist.files.to_hash.keys.first.to_s                   
+    file = gist.files.to_hash.keys.first.to_s              
     num_of_comments = gist.comments      
     most_recent_comment_date = gist_comments.map! { |gist_comment| gist_comment.updated_at}.sort.pop 
     url = "https://gist.github.com/#{user.username}/#{gist_id}"

@@ -68,7 +68,7 @@
             <% gist_container.container.each_with_index do |gist, index|  %>
             <% if index == (gist_container.container.length - 1) %>
             <tr>
-              <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
+              <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.short_filename %></a></div></td>
             </tr>
             <tr>
               <td class="comments last"><a href="<%= gist.url %>#comments" class="com-link">
@@ -81,7 +81,7 @@
             </tr>
             <% else %>
             <tr>
-              <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.file %></a></div></td>
+              <td class="file"><div class="wrap"><a href="<%= gist.url %>"><%= gist.short_filename %></a></div></td>
             </tr>
             <tr>
               <td class="comments"><a href="<%= gist.url %>#comments" class="com-link">
