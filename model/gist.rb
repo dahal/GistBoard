@@ -5,12 +5,12 @@ require 'date'
 class Gist
   attr_reader :filename, :url, :id, :num_of_comments, :most_recent_comment_date
   
-  def initialize( filename, url, id, num_of_comments, most_recent_comment_date=DateTime.new(1986,10,23))  
+  def initialize( filename, url, id, num_of_comments, most_recent_comment_date)  
     @filename                    = filename
     @url                         = url
     @id                          = id
     @num_of_comments             = num_of_comments
-    @most_recent_comment_date    = most_recent_comment_date
+    @most_recent_comment_date   = most_recent_comment_date
   end
   
   def short_filename

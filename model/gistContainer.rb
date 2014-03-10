@@ -9,7 +9,7 @@ class GistContainer
   end
 
   def sort!( key="most_recent_comment_date" )
-    @container.sort_by! { |gist| gist.most_recent_comment_date }
+    @container.sort_by! { |gist| gist.most_recent_comment_date.to_s }.reverse!
   end
   
   def add_gist( gist )

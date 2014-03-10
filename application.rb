@@ -19,25 +19,6 @@ helpers do
 end
 
 get '/' do
-	# gist1 = { user: "jhulley" ,
-	#  file: "myrubyfile.rb" ,
-	#  url: "http://github.com/ruby",
-	#  num_comments: 3
-	# }
-
-	# gist2 = { user: "jhulley" ,
-	#  file: "myhtmlfile.html" ,
-	#  url: "http://github.com/html",
-	#  num_comments: 5
-	# }
-
-	# gist3 = { user: "jhulley" ,
-	#  file: "mymarkdownfile.md" ,
-	#  url: "http://github.com/markdown",
-	#  num_comments: 9
-	# }
-
-	# gist_container = [gist1 , gist2 , gist3]
 
 	if !authenticated?
 		redirect "/new_user"
@@ -54,19 +35,17 @@ get '/' do
 		gist_id = gist.id
 		gist_comments = client.gist_comments(gist_id)
     file = gist.files.to_hash.keys.first.to_s              
-    num_of_comments = gist.comments      
-    most_recent_comment_date = gist_comments.map! { |gist_comment| gist_comment.updated_at}.sort.pop
+    num_of_comments = gist.comments
+    if num_of_comments < 1
+			most_recent_comment_date = DateTime.new(1986,10,23).xmlschema.to_s
+    else
+			most_recent_comment_date = gist_comments.map! { |gist_comment| gist_comment.updated_at}.sort.pop
+    end      
     url = "https://gist.github.com/#{user.username}/#{gist_id}"
-    # if num_of_comments > 0
-    # 	gist = Gist.new( file, url, gist_id, num_of_comments, most_recent_comment_date )
-    # else
-    # 	gist = Gist.new( file, url, gist_id, num_of_comments)
-    # end
-    gist = Gist.new( file, url, gist_id, num_of_comments, most_recent_comment_date )
+    gist = Gist.new( file, url, gist_id, num_of_comments, most_recent_comment_date)
     gist_container.add_gist(gist)
-
 	end
-	
+	gist_container.sort!
   erb :index, locals: { gist_container: gist_container }
 end
 
