@@ -173,15 +173,16 @@ tr {
 	border-top: 1px solid #d5d5d5;
 	clear: both ;
 	text-align: center;
+	font-size: .750em;
 }
 
 .footer a {
 	font-weight: bold;
-	text-decoration: underline;
 }
 
-.copy {
-	font-size: .750em;
+.begin {
+	text-align: center;
+	margin: 50px 0 50px 0;
 }
 
 /* Tablets and phones */
@@ -266,23 +267,9 @@ tr {
 		font-size: .750em;
 		display: inline;
 	}
+
 }
 
 @media screen and (max-width: 720px){
-
-	.wrap {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-
-	/*
-	td {
-		overflow: hidden;
-	  text-overflow: ellipsis;
-	  white-space: nowrap;
-	}
-	*/
-
 }
 
