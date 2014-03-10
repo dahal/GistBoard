@@ -67,6 +67,7 @@ table {
 	color: #000000;
 	text-decoration: none;
 	text-align: center;
+	font-weight: bold;
 }
 
 .username-link:hover {
@@ -228,7 +229,7 @@ td {
 
 	.username-link {
 		float: left;
-		margin-top: 10px;
+		/* margin-top: 10px; */
 		padding: 0;
 		text-align: left;
 	}
@@ -256,7 +257,7 @@ td {
 	}
 
 	.stat h3 {
-		font-size: 1.5em;
+		font-size: 1.25em;
 		display: inline;
 	}
 
