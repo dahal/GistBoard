@@ -14,7 +14,11 @@ class Gist
   end
   
   def short_filename
-  	return @filename.slice(0...30) << '...'
+    if @filename.length > 30
+  	 return @filename.slice(0...30) << '...'
+    else 
+      return @filename
+    end
   end
 
   # def insert_fake_dates
